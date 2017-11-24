@@ -386,11 +386,6 @@ view: records {
     sql: ${TABLE}.LatestComment ;;
   }
 
-  dimension: original_reason {
-    type: string
-    sql: ${TABLE}.Original_Reason ;;
-  }
-
   dimension: pk {
     type: string
     sql: ${TABLE}.Pk ;;
@@ -436,9 +431,21 @@ view: records {
     sql: ${TABLE}.UltimateParentPk ;;
   }
 
-  dimension: updated_reason {
+  dimension: query_category {
     type: string
-    sql: ${TABLE}.Updated_Reason ;;
+    sql: ${TABLE}.QueryCategory ;;
+  }
+  dimension: query_status {
+    type: string
+    sql: ${TABLE}.QueryStatus ;;
+  }
+  dimension: query_with {
+    type: string
+    sql: ${TABLE}.QueryWith ;;
+  }
+  dimension: query_method {
+    type: string
+    sql: ${TABLE}.QueryMethod ;;
   }
 
   measure: count {
