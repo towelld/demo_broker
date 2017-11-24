@@ -2,8 +2,13 @@ view: records {
   sql_table_name: DemoBroker.Records ;;
 
   dimension: active_status {
-    type: number
-    sql: ${TABLE}.ActiveStatus ;;
+    type: string
+    sql: case ${TABLE}.ActiveStatus when 0 then 'Unmatched' when 1 then 'Matched' end;;
+  }
+
+  dimension: match_status {
+    type: string
+    sql: case ${TABLE}.ActiveStatus when 0 then 'Unmatched' when 1 then 'Matched' end;;
   }
 
   dimension: acturis_amount {
@@ -46,7 +51,7 @@ view: records {
     sql: ${TABLE}.Acturis_Client_OutstandingCurrency ;;
   }
 
-  dimension: acturis_entity {
+  dimension: entity {
     type: string
     sql: ${TABLE}.Acturis_Entity ;;
   }
@@ -283,7 +288,7 @@ view: records {
 
   dimension: assigned_to {
     type: string
-    sql: ${TABLE}.AssignedTo ;;
+    sql: isnull(substring(${TABLE}.AssignedTo,charindex('.',${TABLE}.AssignedTo)+1,200),'Unassigned');;
   }
 
   dimension: business_key {
@@ -438,6 +443,45 @@ view: records {
 
   measure: count {
     type: count
-    drill_fields: [acturis_insurer_name]
+    drill_fields: [broker_record*]
+  }
+  measure: count_percent {
+    type: percent_of_total
+    sql: ${count};;
+    drill_fields: [broker_record*]
+  }
+
+  measure: sum_amount {
+    type: sum
+    sql: ${amount};;
+    value_format_name: decimal_2
+    drill_fields: [broker_record*]
+    html: {% if records.amount._value < 0 %}
+                <font color="#df5555">{{ rendered_value }}</font>
+          {% else %}
+                <font color="#000000">{{ rendered_value }}</font>
+          {% endif %} ;;
+  }
+  measure: average_amount {
+    type: average
+    sql: ${amount};;
+    drill_fields: [broker_record*]
+  }
+  measure: count_matched {
+    type: sum
+    sql: ${TABLE}.ActiveStatus;;
+    drill_fields: [broker_record*]
+  }
+
+  set: broker_record {
+    fields: [
+      system,
+      entity,
+      policy_holder,
+      amount,
+      amount_currency,
+      effective_date,
+      insurer_policy_no
+    ]
   }
 }
