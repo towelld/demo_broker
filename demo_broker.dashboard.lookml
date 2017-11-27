@@ -18,7 +18,7 @@
       title: Query Category
       left: 0
       top: 0
-      height: 5
+      height: 6
       width: 18
       model: demo_broker
       explore: records
@@ -92,13 +92,68 @@
       series_colors:
         records.count: "#646569"
 
+    - name: unmatched_entity
+      title: Unmatched Policy Value (£)
+      left: 0
+      top: 6
+      height: 6
+      width: 6
+      model: demo_broker
+      explore: records
+      type: looker_geo_choropleth
+      fields: [records.sum_amount, records.allianz_policy_ref]
+      filters:
+        records.match_status: Unmatched
+        records.system: Acturis
+      sorts: [records.sum_amount desc]
+      map: uk_postcode_areas
+      map_projection: ''
+      show_view_names: false
+      quantize_colors: false
+      stacking: ''
+      show_value_labels: false
+      label_density: 13
+      legend_position: left
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      limit_displayed_rows: false
+      y_axis_combined: true
+      show_y_axis_labels: true
+      show_y_axis_ticks: true
+      y_axis_tick_density: default
+      y_axis_tick_density_custom: 5
+      show_x_axis_label: false
+      show_x_axis_ticks: true
+      x_axis_scale: auto
+      y_axis_scale_mode: linear
+      ordering: none
+      show_null_labels: false
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      value_labels: legend
+      label_type: labPer
+      series_types: {}
+      hide_legend: false
+      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
+          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
+          type: linear, unpinAxis: false, valueFormat: '', series: [{id: records.sum_amount,
+              name: Records Sum Amount, axisId: records.sum_amount}]}]
+      hidden_series: []
+      label_color: ["#000000"]
+      font_size: ''
+      reference_lines: []
+      colors: [green, orange, red]
+      empty_color: "#646569"
+      outer_border_color: "#000000"
+      inner_border_color: "#CCCCCC"
 
     - name: top_10_unmatched_entity
       title: Top 10 Entities - Unmatched Policy Value (£)
-      left: 0
-      top: 5
-      height: 4
-      width: 18
+      left: 6
+      top: 6
+      height: 6
+      width: 12
       model: demo_broker
       explore: records
       type: looker_column
