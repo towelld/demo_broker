@@ -433,8 +433,21 @@ view: records {
 
   dimension: query_category {
     type: string
-    sql: ${TABLE}.Query_Category ;;
+    sql: case ${TABLE}.Query_Category when 'CannotTrace' then 'Cannot Trace'
+                                      when 'ClientOutstanding' then 'Client Outstanding'
+                                      when 'CommRate' then 'Commission Rate'
+                                      when 'ContactBroker' then 'Contact Broker'
+                                      when 'ContactInsurer' then 'Contact Insurer'
+                                      when 'LapsedPolicy' then 'Lapsed Policy'
+                                      when 'NotDue' then 'Not Due'
+                                      when 'NotInvoiced' then 'Not Invoiced'
+                                      when 'PaidPreviousMonth' then 'Paid Previous Month'
+                                      when 'PayMethodBroker' then 'Pay Method Broker'
+                                      when 'PayMethodInsurer' then 'Pay Method Insurer'
+                                      when 'PremiumQuery' then 'Premium Query'
+         end;;
   }
+
   dimension: query_status {
     type: string
     sql: ${TABLE}.Query_Status ;;
