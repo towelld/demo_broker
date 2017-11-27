@@ -24,26 +24,26 @@
       explore: records
       type: looker_bar
       fields: [records.count, records.query_category]
-      pivots: [records.query_category]
       filters:
         records.match_status: Unmatched
         records.system: Acturis
-      sorts: [records.count desc]
+      sorts: [records.count desc, records.query_category]
       limit: 500
+      column_limit: 50
       stacking: ''
-      show_value_labels: true
+      show_value_labels: false
       label_density: 13
       legend_position: left
       x_axis_gridlines: false
       y_axis_gridlines: true
-      show_view_names: true
+      show_view_names: false
       limit_displayed_rows: false
       y_axis_combined: true
       show_y_axis_labels: true
       show_y_axis_ticks: true
       y_axis_tick_density: default
       y_axis_tick_density_custom: 5
-      show_x_axis_label: true
+      show_x_axis_label: false
       show_x_axis_ticks: true
       x_axis_scale: auto
       y_axis_scale_mode: linear
@@ -52,30 +52,49 @@
       show_totals_labels: false
       show_silhouette: false
       totals_color: "#808080"
+      map: uk_postcode_areas
+      map_projection: ''
+      quantize_colors: false
+      map_plot_mode: points
+      heatmap_gridlines: false
+      heatmap_gridlines_empty: false
+      heatmap_opacity: 0.5
+      show_region_field: true
+      draw_map_labels_above_data: true
+      map_tile_provider: positron
+      map_position: fit_data
+      map_scale_indicator: 'off'
+      map_pannable: true
+      map_zoomable: true
+      map_marker_type: circle
+      map_marker_icon_name: default
+      map_marker_radius_mode: proportional_value
+      map_marker_units: meters
+      map_marker_proportional_scale_type: linear
+      map_marker_color_mode: fixed
+      show_legend: true
+      quantize_map_value_colors: false
+      reverse_map_value_colors: false
       value_labels: legend
       label_type: labPer
-      series_types: {}
+      series_types:
+        records.count: column
       hide_legend: false
-      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
-          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
-          type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: Cannot
-                Trace, name: Cannot Trace, axisId: records.count}, {id: Client Outstanding,
-              name: Client Outstanding, axisId: records.count}, {id: Commission Rate,
-              name: Commission Rate, axisId: records.count}, {id: Contact Broker, name: Contact
-                Broker, axisId: records.count}, {id: Contact Insurer, name: Contact Insurer,
-              axisId: records.count}, {id: Lapsed Policy, name: Lapsed Policy, axisId: records.count},
-            {id: Not Due, name: Not Due, axisId: records.count}, {id: Not Invoiced, name: Not
-                Invoiced, axisId: records.count}, {id: Paid Previous Month, name: Paid
-                Previous Month, axisId: records.count}, {id: Pay Method Broker, name: Pay
-                Method Broker, axisId: records.count}, {id: Pay Method Insurer, name: Pay
-                Method Insurer, axisId: records.count}, {id: Premium Query, name: Premium
-                Query, axisId: records.count}]}]
+      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: bottom,
+          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: !!null '',
+          type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: records.count,
+              name: Records, axisId: records.count, __FILE: demo_broker/demo_broker.dashboard.lookml,
+              __LINE_NUM: 61}], __FILE: demo_broker/demo_broker.dashboard.lookml, __LINE_NUM: 59}]
       hidden_series: []
       label_color: ["#000000"]
       font_size: ''
+      colors: ['palette: Default']
+      series_colors:
+        records.count: "#646569"
+
 
     - name: top_10_unmatched_entity
-      title: Top 10 Entities - Unmatched Policies
+      title: Top 10 Entities - Unmatched Policy Value (£)
       left: 0
       top: 5
       height: 4
