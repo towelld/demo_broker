@@ -120,6 +120,10 @@
 
     - name: query_method
       title: Query Method
+      left: 8
+      top: 4
+      height: 4
+      width: 8
       model: demo_broker
       explore: records
       type: looker_pie
@@ -165,4 +169,3 @@
             {id: ContactBroker, name: ContactBroker, axisId: records.count}, {id: CommRate,
               name: CommRate, axisId: records.count}, {id: ClientOutstanding, name: ClientOutstanding,
               axisId: records.count}, {id: CannotTrace, name: CannotTrace, axisId: records.count}]}]
-
