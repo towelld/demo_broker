@@ -28,7 +28,7 @@
       filters:
         records.match_status: Unmatched
         records.system: Acturis
-      sorts: [records.count desc 0, records.query_category]
+      sorts: [records.count desc]
       limit: 500
       stacking: ''
       show_value_labels: true
