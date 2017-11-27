@@ -463,7 +463,7 @@ view: records {
     sql: ${amount};;
     value_format_name: decimal_2
     drill_fields: [broker_record*]
-    html: {% if records.amount._value < 0 %}
+    html: {% if records.Amount._value < 0 %}
                 <font color="#df5555">{{ rendered_value }}</font>
           {% else %}
                 <font color="#000000">{{ rendered_value }}</font>
