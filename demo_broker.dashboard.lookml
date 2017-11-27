@@ -220,3 +220,53 @@
       show_silhouette: false
       totals_color: "#808080"
       series_types: {}
+
+    - name: top_10_unmatched_entity
+      title: Top 10 Entities - Unmatched Policies
+      left: 0
+      top: 9
+      height: 3
+      width: 24
+      model: demo_broker
+      explore: records
+      type: looker_column
+      fields: [records.entity, records.sum_amount]
+      filters:
+        records.match_status: Unmatched
+        records.system: Acturis
+      sorts: [records.sum_amount desc]
+      limit: 10
+      stacking: ''
+      show_value_labels: false
+      label_density: 13
+      legend_position: left
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      show_view_names: true
+      limit_displayed_rows: false
+      y_axis_combined: true
+      show_y_axis_labels: true
+      show_y_axis_ticks: true
+      y_axis_tick_density: default
+      y_axis_tick_density_custom: 5
+      show_x_axis_label: false
+      show_x_axis_ticks: true
+      x_axis_scale: auto
+      y_axis_scale_mode: linear
+      ordering: none
+      show_null_labels: false
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      value_labels: legend
+      label_type: labPer
+      series_types: {}
+      hide_legend: false
+      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
+          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
+          type: linear, unpinAxis: false, valueFormat: '', series: [{id: records.sum_amount,
+              name: Records Sum Amount, axisId: records.sum_amount}]}]
+      hidden_series: []
+      label_color: ["#000000"]
+      font_size: ''
+      reference_lines: []
