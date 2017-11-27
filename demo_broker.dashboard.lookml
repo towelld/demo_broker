@@ -13,6 +13,7 @@
     tile_text_color: "#646569"
 
   elements:
+
     - name: query_category
       title: Query Category
       left: 0
@@ -21,16 +22,17 @@
       width: 18
       model: demo_broker
       explore: records
-      type: looker_column
-      fields: [records.query_category, records.count]
+      type: looker_bar
+      fields: [records.count, records.query_category]
       pivots: [records.query_category]
       filters:
+        records.match_status: Unmatched
         records.system: Acturis
-      sorts: [records.query_category]
+      sorts: [records.count desc 0, records.query_category]
       limit: 500
       stacking: ''
-      show_value_labels: false
-      label_density: 25
+      show_value_labels: true
+      label_density: 13
       legend_position: left
       x_axis_gridlines: false
       y_axis_gridlines: true
@@ -42,7 +44,7 @@
       y_axis_tick_density: default
       y_axis_tick_density_custom: 5
       show_x_axis_label: true
-      show_x_axis_ticks: false
+      show_x_axis_ticks: true
       x_axis_scale: auto
       y_axis_scale_mode: linear
       ordering: none
@@ -53,18 +55,24 @@
       value_labels: legend
       label_type: labPer
       series_types: {}
+      hide_legend: false
       y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
           showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
-          type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: PremiumQuery,
-              name: PremiumQuery, axisId: records.count}, {id: PayMethodInsurer, name: PayMethodInsurer,
-              axisId: records.count}, {id: PayMethodBroker, name: PayMethodBroker, axisId: records.count},
-            {id: PaidPreviousMonth, name: PaidPreviousMonth, axisId: records.count}, {
-              id: NotInvoiced, name: NotInvoiced, axisId: records.count}, {id: NotDue,
-              name: NotDue, axisId: records.count}, {id: LapsedPolicy, name: LapsedPolicy,
-              axisId: records.count}, {id: ContactInsurer, name: ContactInsurer, axisId: records.count},
-            {id: ContactBroker, name: ContactBroker, axisId: records.count}, {id: CommRate,
-              name: CommRate, axisId: records.count}, {id: ClientOutstanding, name: ClientOutstanding,
-              axisId: records.count}, {id: CannotTrace, name: CannotTrace, axisId: records.count}]}]
+          type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: Cannot
+                Trace, name: Cannot Trace, axisId: records.count}, {id: Client Outstanding,
+              name: Client Outstanding, axisId: records.count}, {id: Commission Rate,
+              name: Commission Rate, axisId: records.count}, {id: Contact Broker, name: Contact
+                Broker, axisId: records.count}, {id: Contact Insurer, name: Contact Insurer,
+              axisId: records.count}, {id: Lapsed Policy, name: Lapsed Policy, axisId: records.count},
+            {id: Not Due, name: Not Due, axisId: records.count}, {id: Not Invoiced, name: Not
+                Invoiced, axisId: records.count}, {id: Paid Previous Month, name: Paid
+                Previous Month, axisId: records.count}, {id: Pay Method Broker, name: Pay
+                Method Broker, axisId: records.count}, {id: Pay Method Insurer, name: Pay
+                Method Insurer, axisId: records.count}, {id: Premium Query, name: Premium
+                Query, axisId: records.count}]}]
+      hidden_series: []
+      label_color: ["#000000"]
+      font_size: ''
 
     - name: query_status
       title: Query Status
@@ -77,6 +85,7 @@
       type: looker_pie
       fields: [records.count, records.query_status]
       filters:
+        records.match_status: Unmatched
         records.system: Acturis
       sorts: [records.count desc]
       limit: 500
@@ -129,6 +138,7 @@
       type: looker_pie
       fields: [records.count, records.query_method]
       filters:
+        records.match_status: Unmatched
         records.system: Acturis
       sorts: [records.count desc]
       limit: 500
@@ -180,6 +190,9 @@
       explore: records
       type: looker_pie
       fields: [records.query_with, records.count]
+      filters:
+        records.match_status: Unmatched
+        records.system: Acturis
       sorts: [records.count desc]
       limit: 500
       value_labels: legend
