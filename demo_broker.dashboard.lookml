@@ -17,8 +17,8 @@
       title: Query Category
       left: 0
       top: 0
-      height: 4
-      width: 24
+      height: 9
+      width: 18
       model: demo_broker
       explore: records
       type: looker_column
@@ -31,7 +31,7 @@
       stacking: ''
       show_value_labels: false
       label_density: 25
-      legend_position: center
+      legend_position: left
       x_axis_gridlines: false
       y_axis_gridlines: true
       show_view_names: true
@@ -68,10 +68,10 @@
 
     - name: query_status
       title: Query Status
-      left: 0
-      top: 4
-      height: 4
-      width: 8
+      left: 18
+      top: 0
+      height: 3
+      width: 6
       model: demo_broker
       explore: records
       type: looker_pie
@@ -120,10 +120,10 @@
 
     - name: query_method
       title: Query Method
-      left: 8
-      top: 4
-      height: 4
-      width: 8
+      left: 18
+      top: 3
+      height: 3
+      width: 6
       model: demo_broker
       explore: records
       type: looker_pie
@@ -172,10 +172,10 @@
 
     - name: query_with
       title: Query With
-      left: 16
-      top: 4
-      height: 4
-      width: 8
+      left: 18
+      top: 6
+      height: 3
+      width: 6
       model: demo_broker
       explore: records
       type: looker_pie
