@@ -433,19 +433,19 @@ view: records {
 
   dimension: query_category {
     type: string
-    sql: ${TABLE}.QueryCategory ;;
+    sql: ${TABLE}.Query_Category ;;
   }
   dimension: query_status {
     type: string
-    sql: ${TABLE}.QueryStatus ;;
+    sql: ${TABLE}.Query_Status ;;
   }
   dimension: query_with {
     type: string
-    sql: ${TABLE}.QueryWith ;;
+    sql: ${TABLE}.Query_With ;;
   }
   dimension: query_method {
     type: string
-    sql: ${TABLE}.QueryMethod ;;
+    sql: ${TABLE}.Query_Method ;;
   }
 
   measure: count {
