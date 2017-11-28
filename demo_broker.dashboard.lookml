@@ -16,10 +16,10 @@
 
     - name: query_category
       title: Query Category
-      left: 0
+      left: 6
       top: 0
       height: 6
-      width: 18
+      width: 12
       model: demo_broker
       explore: records
       type: looker_bar
@@ -95,8 +95,8 @@
     - name: unmatched_entity
       title: Unmatched Policy Value (£)
       left: 0
-      top: 6
-      height: 6
+      top: 0
+      height: 12
       width: 6
       model: demo_broker
       explore: records
