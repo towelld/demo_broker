@@ -18,7 +18,7 @@
       title: Query Category
       left: 6
       top: 0
-      height: 9
+      height: 6
       width: 12
       model: demo_broker
       explore: records
@@ -151,7 +151,7 @@
     - name: top_10_unmatched_entity
       title: Top 10 Entities - Unmatched Policy Value (£)
       left: 6
-      top: 9
+      top: 6
       height: 6
       width: 12
       model: demo_broker
