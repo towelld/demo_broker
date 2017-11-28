@@ -18,7 +18,7 @@
       title: Query Category
       left: 6
       top: 0
-      height: 6
+      height: 9
       width: 12
       model: demo_broker
       explore: records
@@ -151,7 +151,7 @@
     - name: top_10_unmatched_entity
       title: Top 10 Entities - Unmatched Policy Value (£)
       left: 6
-      top: 6
+      top: 9
       height: 6
       width: 12
       model: demo_broker
@@ -317,6 +317,44 @@
       filters:
         records.match_status: Unmatched
         records.system: Acturis
+      sorts: [records.count desc]
+      limit: 500
+      value_labels: legend
+      label_type: labPer
+      stacking: ''
+      show_value_labels: false
+      label_density: 25
+      legend_position: center
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      show_view_names: true
+      limit_displayed_rows: false
+      y_axis_combined: true
+      show_y_axis_labels: true
+      show_y_axis_ticks: true
+      y_axis_tick_density: default
+      y_axis_tick_density_custom: 5
+      show_x_axis_label: true
+      show_x_axis_ticks: true
+      x_axis_scale: auto
+      y_axis_scale_mode: linear
+      ordering: none
+      show_null_labels: false
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      series_types: {}
+
+    - name: match_status
+      title: Match Status
+      left: 18
+      top: 9
+      height: 3
+      width: 6
+      model: demo_broker
+      explore: records
+      type: looker_pie
+      fields: [records.match_status, records.count]
       sorts: [records.count desc]
       limit: 500
       value_labels: legend
