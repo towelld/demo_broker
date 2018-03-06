@@ -51,19 +51,9 @@ view: records {
     sql: ${TABLE}.Acturis_Client_OutstandingCurrency ;;
   }
 
-  dimension: entity {
-    type: string
-    sql: ${TABLE}.Acturis_Entity ;;
-  }
-
   dimension: acturis_insurer_account {
     type: string
     sql: ${TABLE}.Acturis_Insurer_Account ;;
-  }
-
-  dimension: acturis_insurer_name {
-    type: string
-    sql: ${TABLE}.Acturis_Insurer_Name ;;
   }
 
   dimension: acturis_insurer_policy_no_4_5 {
@@ -121,156 +111,6 @@ view: records {
     sql: ${TABLE}.Acturis_Version_Ref ;;
   }
 
-  dimension: allianz_account_ref {
-    type: string
-    sql: ${TABLE}.Allianz_Account_Ref ;;
-  }
-
-  dimension: allianz_adj_comm {
-    type: number
-    sql: ${TABLE}.Allianz_Adj_Comm ;;
-  }
-
-  dimension: allianz_adj_comm_currency {
-    type: string
-    sql: ${TABLE}.Allianz_Adj_CommCurrency ;;
-  }
-
-  dimension: allianz_adj_gross {
-    type: number
-    sql: ${TABLE}.Allianz_Adj_Gross ;;
-  }
-
-  dimension: allianz_adj_gross_currency {
-    type: string
-    sql: ${TABLE}.Allianz_Adj_GrossCurrency ;;
-  }
-
-  dimension: allianz_adj_net {
-    type: number
-    sql: ${TABLE}.Allianz_Adj_Net ;;
-  }
-
-  dimension: allianz_adj_net_currency {
-    type: string
-    sql: ${TABLE}.Allianz_Adj_NetCurrency ;;
-  }
-
-  dimension: allianz_amount {
-    type: number
-    sql: ${TABLE}.Allianz_Amount ;;
-  }
-
-  dimension: allianz_amount_currency {
-    type: string
-    sql: ${TABLE}.Allianz_AmountCurrency ;;
-  }
-
-  dimension: allianz_broker_status {
-    type: string
-    sql: ${TABLE}.Allianz_Broker_Status ;;
-  }
-
-  dimension: allianz_comm {
-    type: number
-    sql: ${TABLE}.Allianz_Comm ;;
-  }
-
-  dimension: allianz_comm_currency {
-    type: string
-    sql: ${TABLE}.Allianz_CommCurrency ;;
-  }
-
-  dimension: allianz_credit_status {
-    type: string
-    sql: ${TABLE}.Allianz_Credit_Status ;;
-  }
-
-  dimension: allianz_gross {
-    type: number
-    sql: ${TABLE}.Allianz_Gross ;;
-  }
-
-  dimension: allianz_gross_currency {
-    type: string
-    sql: ${TABLE}.Allianz_GrossCurrency ;;
-  }
-
-  dimension_group: allianz_invoice_due {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.Allianz_Invoice_Due_Date ;;
-  }
-
-  dimension: allianz_ipt {
-    type: number
-    sql: ${TABLE}.Allianz_IPT ;;
-  }
-
-  dimension: allianz_iptcurrency {
-    type: string
-    sql: ${TABLE}.Allianz_IPTCurrency ;;
-  }
-
-  dimension: allianz_net {
-    type: number
-    sql: ${TABLE}.Allianz_Net ;;
-  }
-
-  dimension: allianz_net_currency {
-    type: string
-    sql: ${TABLE}.Allianz_NetCurrency ;;
-  }
-
-  dimension: allianz_paid {
-    type: string
-    sql: ${TABLE}.Allianz_Paid ;;
-  }
-
-  dimension: allianz_payment_amount {
-    type: number
-    sql: ${TABLE}.Allianz_Payment_Amount ;;
-  }
-
-  dimension: allianz_payment_amount_currency {
-    type: string
-    sql: ${TABLE}.Allianz_Payment_AmountCurrency ;;
-  }
-
-  dimension: allianz_policy_ref {
-    type: string
-    sql: ${TABLE}.Allianz_Policy_Ref ;;
-  }
-
-  dimension: allianz_receivable_ref {
-    type: string
-    sql: ${TABLE}.Allianz_Receivable_Ref ;;
-  }
-
-  dimension: allianz_trans_type {
-    type: string
-    sql: ${TABLE}.Allianz_Trans_Type ;;
-  }
-
-  dimension: allianz_vat {
-    type: number
-    sql: ${TABLE}.Allianz_VAT ;;
-  }
-
-  dimension: allianz_vatcurrency {
-    type: string
-    sql: ${TABLE}.Allianz_VATCurrency ;;
-  }
-
   dimension: allow_purge {
     type: string
     sql: ${TABLE}.AllowPurge ;;
@@ -301,6 +141,11 @@ view: records {
     sql: ${TABLE}.Client_Outstanding ;;
   }
 
+  dimension: credit_status {
+    type: string
+    sql: ${TABLE}.Credit_Status ;;
+  }
+
   dimension: date_time_created {
     type: string
     sql: ${TABLE}.DateTimeCreated ;;
@@ -326,9 +171,154 @@ view: records {
     sql: ${TABLE}.Effective_Date ;;
   }
 
+  dimension: entity {
+    type: string
+    sql: ${TABLE}.Entity ;;
+  }
+
   dimension: has_comments {
     type: string
     sql: ${TABLE}.HasComments ;;
+  }
+
+  dimension: insurer_account_ref {
+    type: string
+    sql: ${TABLE}.Insurer_Account_Ref ;;
+  }
+
+  dimension: insurer_adj_comm {
+    type: number
+    sql: ${TABLE}.Insurer_Adj_Comm ;;
+  }
+
+  dimension: insurer_adj_comm_currency {
+    type: string
+    sql: ${TABLE}.Insurer_Adj_CommCurrency ;;
+  }
+
+  dimension: insurer_adj_gross {
+    type: number
+    sql: ${TABLE}.Insurer_Adj_Gross ;;
+  }
+
+  dimension: insurer_adj_gross_currency {
+    type: string
+    sql: ${TABLE}.Insurer_Adj_GrossCurrency ;;
+  }
+
+  dimension: insurer_adj_net {
+    type: number
+    sql: ${TABLE}.Insurer_Adj_Net ;;
+  }
+
+  dimension: insurer_adj_net_currency {
+    type: string
+    sql: ${TABLE}.Insurer_Adj_NetCurrency ;;
+  }
+
+  dimension: insurer_amount {
+    type: number
+    sql: ${TABLE}.Insurer_Amount ;;
+  }
+
+  dimension: insurer_amount_currency {
+    type: string
+    sql: ${TABLE}.Insurer_AmountCurrency ;;
+  }
+
+  dimension: insurer_broker_status {
+    type: string
+    sql: ${TABLE}.Insurer_Broker_Status ;;
+  }
+
+  dimension: insurer_ccy {
+    type: string
+    sql: ${TABLE}.Insurer_Ccy ;;
+  }
+
+  dimension: insurer_comm {
+    type: number
+    sql: ${TABLE}.Insurer_Comm ;;
+  }
+
+  dimension: insurer_comm_currency {
+    type: string
+    sql: ${TABLE}.Insurer_CommCurrency ;;
+  }
+
+  dimension: insurer_fee {
+    type: number
+    sql: ${TABLE}.Insurer_Fee ;;
+  }
+
+  dimension: insurer_fee_currency {
+    type: string
+    sql: ${TABLE}.Insurer_FeeCurrency ;;
+  }
+
+  dimension: insurer_gross {
+    type: number
+    sql: ${TABLE}.Insurer_Gross ;;
+  }
+
+  dimension: insurer_gross_currency {
+    type: string
+    sql: ${TABLE}.Insurer_GrossCurrency ;;
+  }
+
+  dimension_group: insurer_invoice_due {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.Insurer_Invoice_Due_Date ;;
+  }
+
+  dimension: insurer_ipt {
+    type: number
+    sql: ${TABLE}.Insurer_IPT ;;
+  }
+
+  dimension: insurer_iptcurrency {
+    type: string
+    sql: ${TABLE}.Insurer_IPTCurrency ;;
+  }
+
+  dimension: insurer_name {
+    type: string
+    sql: ${TABLE}.Insurer_Name ;;
+  }
+
+  dimension: insurer_net {
+    type: number
+    sql: ${TABLE}.Insurer_Net ;;
+  }
+
+  dimension: insurer_net_currency {
+    type: string
+    sql: ${TABLE}.Insurer_NetCurrency ;;
+  }
+
+  dimension: insurer_paid {
+    type: string
+    sql: ${TABLE}.Insurer_Paid ;;
+  }
+
+  dimension: insurer_payment_amount {
+    type: number
+    sql: ${TABLE}.Insurer_Payment_Amount ;;
+  }
+
+  dimension: insurer_payment_amount_currency {
+    type: string
+    sql: ${TABLE}.Insurer_Payment_AmountCurrency ;;
   }
 
   dimension: insurer_policy_no {
@@ -354,6 +344,31 @@ view: records {
   dimension: insurer_policy_no_extract_3 {
     type: string
     sql: ${TABLE}.Insurer_Policy_No_Extract_3 ;;
+  }
+
+  dimension: insurer_policy_ref {
+    type: string
+    sql: ${TABLE}.Insurer_Policy_Ref ;;
+  }
+
+  dimension: insurer_receivable_ref {
+    type: string
+    sql: ${TABLE}.Insurer_Receivable_Ref ;;
+  }
+
+  dimension: insurer_trans_type {
+    type: string
+    sql: ${TABLE}.Insurer_Trans_Type ;;
+  }
+
+  dimension: insurer_vat {
+    type: number
+    sql: ${TABLE}.Insurer_VAT ;;
+  }
+
+  dimension: insurer_vatcurrency {
+    type: string
+    sql: ${TABLE}.Insurer_VATCurrency ;;
   }
 
   dimension: last_action_by {
@@ -401,6 +416,43 @@ view: records {
     sql: ${TABLE}.Policy_Holder_Scrubbed ;;
   }
 
+  dimension: query_category {
+    type: string
+    sql: case ${TABLE}.Query_Category when 'CannotTrace' then 'Cannot Trace'
+                                      when 'ClientOutstanding' then 'Client Outstanding'
+                                      when 'CommRate' then 'Commission Rate'
+                                      when 'ContactBroker' then 'Contact Broker'
+                                      when 'ContactInsurer' then 'Contact Insurer'
+                                      when 'LapsedPolicy' then 'Lapsed Policy'
+                                      when 'NotDue' then 'Not Due'
+                                      when 'NotInvoiced' then 'Not Invoiced'
+                                      when 'PaidPreviousMonth' then 'Paid Previous Month'
+                                      when 'PayMethodBroker' then 'Pay Method Broker'
+                                      when 'PayMethodInsurer' then 'Pay Method Insurer'
+                                      when 'PremiumQuery' then 'Premium Query'
+         end;;
+  }
+
+  dimension: query_method {
+    type: string
+    sql: ${TABLE}.Query_Method ;;
+  }
+
+  dimension: query_status {
+    type: string
+    sql: ${TABLE}.Query_Status ;;
+  }
+
+  dimension: query_with {
+    type: string
+    sql: ${TABLE}.Query_With ;;
+  }
+
+  dimension: side {
+    type: string
+    sql: ${TABLE}.Side ;;
+  }
+
   dimension: system {
     type: string
     sql: ${TABLE}.System ;;
@@ -431,35 +483,7 @@ view: records {
     sql: ${TABLE}.UltimateParentPk ;;
   }
 
-  dimension: query_category {
-    type: string
-    sql: case ${TABLE}.Query_Category when 'CannotTrace' then 'Cannot Trace'
-                                      when 'ClientOutstanding' then 'Client Outstanding'
-                                      when 'CommRate' then 'Commission Rate'
-                                      when 'ContactBroker' then 'Contact Broker'
-                                      when 'ContactInsurer' then 'Contact Insurer'
-                                      when 'LapsedPolicy' then 'Lapsed Policy'
-                                      when 'NotDue' then 'Not Due'
-                                      when 'NotInvoiced' then 'Not Invoiced'
-                                      when 'PaidPreviousMonth' then 'Paid Previous Month'
-                                      when 'PayMethodBroker' then 'Pay Method Broker'
-                                      when 'PayMethodInsurer' then 'Pay Method Insurer'
-                                      when 'PremiumQuery' then 'Premium Query'
-         end;;
-  }
 
-  dimension: query_status {
-    type: string
-    sql: ${TABLE}.Query_Status ;;
-  }
-  dimension: query_with {
-    type: string
-    sql: ${TABLE}.Query_With ;;
-  }
-  dimension: query_method {
-    type: string
-    sql: ${TABLE}.Query_Method ;;
-  }
 
   measure: count {
     type: count
@@ -503,5 +527,6 @@ view: records {
       effective_date,
       insurer_policy_no
     ]
-  }
+
+}
 }

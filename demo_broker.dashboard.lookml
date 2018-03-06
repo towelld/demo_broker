@@ -101,7 +101,7 @@
       model: demo_broker
       explore: records
       type: looker_geo_choropleth
-      fields: [records.sum_amount, records.allianz_policy_ref]
+      fields: [records.sum_amount, records.insurer_policy_ref]
       filters:
         records.match_status: Unmatched
         records.system: Acturis
