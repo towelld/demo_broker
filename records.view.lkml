@@ -416,6 +416,11 @@ view: records {
     sql: ${TABLE}.Policy_Holder_Scrubbed ;;
   }
 
+  dimension: post_code {
+    type: string
+    sql: ${TABLE}.Insurer_Policy_Ref ;;
+  }
+
   dimension: query_category {
     type: string
     sql: case ${TABLE}.Query_Category when 'CannotTrace' then 'Cannot Trace'
