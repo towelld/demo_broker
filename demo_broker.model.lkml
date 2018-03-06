@@ -6,20 +6,38 @@ include: "*.view"
 # include all the dashboards
 include: "*.dashboard"
 
-explore: exception_record_link {}
+explore: exception_record_link {
+  persist_for: "5 minutes"
+}
 
-explore: exceptions {}
+explore: exceptions {
+  persist_for: "5 minutes"
+}
 
-explore: files {}
+explore: files {
+  persist_for: "5 minutes"
+}
 
-explore: group_record_link {}
+explore: group_record_link {
+  persist_for: "5 minutes"
+}
 
-explore: groups {}
+explore: groups {
+  persist_for: "5 minutes"
+}
 
-explore: load_jobs {}
+explore: load_jobs {
+  persist_for: "5 minutes"
+}
 
-explore: match_jobs {}
+explore: match_jobs {
+  persist_for: "5 minutes"
+}
 
-explore: records {}
+explore: records {
+  persist_for: "5 minutes"
+}
 
-explore: user_audit {}
+explore: user_audit {
+  persist_for: "5 minutes"
+}
