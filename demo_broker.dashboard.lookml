@@ -88,7 +88,7 @@
       hidden_series: []
       label_color: ["#000000"]
       font_size: ''
-      colors: ['palette: Default']
+      colors: ['palette: Mixed Dark']
       series_colors:
         records.count: "#646569"
 
@@ -196,6 +196,7 @@
       hidden_series: []
       label_color: ["#000000"]
       font_size: ''
+      colors: ['palette: Mixed Dark']
       reference_lines: []
 
     - name: query_status
