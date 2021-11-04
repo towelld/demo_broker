@@ -22,7 +22,7 @@
       width: 12
       model: demo_broker
       explore: records
-      type: looker_bar
+      type: looker_grid
       fields: [records.count, records.query_category]
       filters:
         records.match_status: Unmatched
@@ -30,23 +30,70 @@
       sorts: [records.count desc, records.query_category]
       limit: 500
       column_limit: 50
-      stacking: ''
-      show_value_labels: false
-      label_density: 13
-      legend_position: left
+      show_view_names: false
+      show_row_numbers: true
+      transpose: false
+      truncate_text: true
+      hide_totals: false
+      hide_row_totals: false
+      size_to_fit: true
+      table_theme: white
+      limit_displayed_rows: false
+      enable_conditional_formatting: false
+      header_text_alignment: left
+      header_font_size: '12'
+      rows_font_size: '12'
+      conditional_formatting_include_totals: false
+      conditional_formatting_include_nulls: false
+      color_application:
+        collection_id: gresham
+        palette_id: gresham-categorical-0
+        options:
+          steps: 5
+      show_sql_query_menu_options: false
+      show_totals: true
+      show_row_totals: true
+      series_cell_visualizations:
+        records.count:
+          is_active: true
+          palette:
+            palette_id: ef1d0ab1-2ee4-60b3-26db-45ce353b147a
+            collection_id: gresham
+            custom_colors:
+            - "#eaa153"
+            - "#de5454"
       x_axis_gridlines: false
       y_axis_gridlines: true
-      show_view_names: false
-      limit_displayed_rows: false
-      y_axis_combined: true
+      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: bottom,
+          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: !!null '',
+          type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: records.count,
+              name: Records, axisId: records.count, __FILE: demo_broker/demo_broker.dashboard.lookml,
+              __LINE_NUM: 85}], __FILE: demo_broker/demo_broker.dashboard.lookml, __LINE_NUM: 83}]
       show_y_axis_labels: true
       show_y_axis_ticks: true
       y_axis_tick_density: default
       y_axis_tick_density_custom: 5
       show_x_axis_label: false
       show_x_axis_ticks: true
-      x_axis_scale: auto
       y_axis_scale_mode: linear
+      x_axis_reversed: false
+      y_axis_reversed: false
+      plot_size_by_field: false
+      trellis: ''
+      stacking: ''
+      hidden_series: []
+      hide_legend: false
+      legend_position: left
+      colors: ['palette: Mixed Dark']
+      font_size: ''
+      series_types: {}
+      point_style: none
+      series_colors: {}
+      show_value_labels: false
+      label_density: 13
+      label_color: ["#000000"]
+      x_axis_scale: auto
+      y_axis_combined: true
       ordering: none
       show_null_labels: false
       show_totals_labels: false
@@ -77,20 +124,25 @@
       reverse_map_value_colors: false
       value_labels: legend
       label_type: labPer
-      series_types:
-        records.count: column
-      hide_legend: false
-      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: bottom,
-          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: !!null '',
-          type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: records.count,
-              name: Records, axisId: records.count, __FILE: demo_broker/demo_broker.dashboard.lookml,
-              __LINE_NUM: 61}], __FILE: demo_broker/demo_broker.dashboard.lookml, __LINE_NUM: 59}]
-      hidden_series: []
-      label_color: ["#000000"]
-      font_size: ''
-      colors: ['palette: Mixed Dark']
-      series_colors:
-        records.count: "#646569"
+      defaults_version: 1
+      up_color: "#021150"
+      down_color: "#757575"
+      total_color: "#007c8f"
+      leftAxisLabelVisible: false
+      leftAxisLabel: ''
+      rightAxisLabelVisible: false
+      rightAxisLabel: ''
+      smoothedBars: false
+      orientation: automatic
+      labelPosition: left
+      percentType: total
+      percentPosition: inline
+      valuePosition: right
+      labelColorEnabled: false
+      labelColor: "#FFF"
+
+
+
 
     - name: unmatched_entity
       title: Unmatched Policy Value (£)
